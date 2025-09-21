@@ -37,7 +37,14 @@ while (true)
     if (string.Equals(userInput, "exit", StringComparison.OrdinalIgnoreCase))
         break;
 
-    WriteLine(await aiClient.GetResponseAsync(userInput, modelName));
+    try
+    {
+        WriteLine(await aiClient.GetResponseAsync(userInput, modelName));
+    }
+    catch (Exception ex)
+    {
+        WriteLine($"Error: {ex.Message}");
+    }
 }
 
 WriteLine("Press any key to exit...");

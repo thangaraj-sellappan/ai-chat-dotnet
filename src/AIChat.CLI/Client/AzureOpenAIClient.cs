@@ -16,6 +16,6 @@ public class AIClient(string endpoint, string apiKey)
             new SystemChatMessage("You are a helpful assistant who speaks like a nerdy programmer."),
             new UserChatMessage(userInput)
         ]);
-        return completion.Content[0].Text;
+        return completion.Content[0].Text ?? "No response received.";
     }
 }
