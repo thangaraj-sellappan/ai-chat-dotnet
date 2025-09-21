@@ -1,0 +1,27 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.2.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AIChat.CLI", "src\AIChat.CLI\AIChat.CLI.csproj", "{5F7FF9D5-8DD7-EB3C-9AD1-9ED382F2DF87}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5F7FF9D5-8DD7-EB3C-9AD1-9ED382F2DF87}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F7FF9D5-8DD7-EB3C-9AD1-9ED382F2DF87}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F7FF9D5-8DD7-EB3C-9AD1-9ED382F2DF87}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F7FF9D5-8DD7-EB3C-9AD1-9ED382F2DF87}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{5F7FF9D5-8DD7-EB3C-9AD1-9ED382F2DF87} = {827E0CD3-B72D-47B6-A68D-7590B98EB39B}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B47E6E28-34F7-4DF6-8216-F193C4A30B46}
+	EndGlobalSection
+EndGlobal

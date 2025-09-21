@@ -1,0 +1,10 @@
+{
+    "profiles": {
+        "AIChat.CLI": {
+            "commandName": "Project",
+            "environmentVariables": {
+                "DOTNET_ENVIRONMENT": "local"
+            }
+        }
+    }
+}
