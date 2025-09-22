@@ -6,6 +6,10 @@ WriteLine("====================================");
 WriteLine("AI Chat CLI Powered by Azure Open AI");
 WriteLine("====================================");
 
+// Instructions to use or exit the application
+WriteLine("Type your message and press Enter to chat. Type 'exit' to quit.");
+WriteLine();
+
 var environment = Environment.GetEnvironmentVariable("DOTNET_ENVIRONMENT") ?? "local";
 var configuration = new ConfigurationBuilder()
     .AddJsonFile("appSettings.json", optional: true, reloadOnChange: true)
@@ -23,8 +27,9 @@ if (string.IsNullOrWhiteSpace(endpoint) || string.IsNullOrWhiteSpace(apiKey) || 
     return;
 }
 
-var aiClient = new AIClient(endpoint, apiKey);
-WriteLine("Hello, Enter your message (or type 'exit' to quit):");
+var systemPrompt = configuration["AppSettings:SystemPrompt"];
+var aiClient = new AIClient(endpoint, apiKey, systemPrompt);
+WriteLine("Hi Friend, how can I help you?");
 
 while (true)
 {

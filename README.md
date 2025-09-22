@@ -2,50 +2,76 @@
 
 A simple console chat application powered by Azure OpenAI that demonstrates basic AI integration with .NET 8.
 
-## What It Does?
+## What It Does
 
-This is a straightforward console app that lets you chat with Azure OpenAI models. No fancy UI, no over-engineering - just a basic chat interface that shows how to integrate Azure OpenAI with .NET.
+Console app for chatting with Azure OpenAI models. Features configurable system prompts, environment-based settings, and proper error handling.
 
-## Quick Start
+## Setup
 
-1. Clone this repo
-2. Update `appSettings.json` with your Azure OpenAI details:
+### Prerequisites
+- .NET 8 SDK
+- Azure OpenAI Service with deployed model
+
+### Configuration
+
+1. **Clone and navigate**
+   ```bash
+   git clone <repo-url>
+   cd ai-chat-dotnet/src/AIChat.CLI
+   ```
+
+2. **Configure settings**
+
+   Update `appSettings.local.json`:
    ```json
    {
        "AppSettings": {
            "AzureOpenAI": {
-               "Endpoint": "https://your-azure-openai-endpoint/",
-               "ApiKey": "your-azure-openai-api-key",
+               "Endpoint": "https://your-resource.openai.azure.com/",
+               "ApiKey": "your-api-key",
                "ModelName": "gpt-4"
-           }
+           },
+           "SystemPrompt": "You are a helpful assistant..."
        }
    }
    ```
-3. Run the app:
+
+3. **Run**
    ```bash
    dotnet run
    ```
-4. Start chatting! Type 'exit' to quit.
 
-## Key Technologies
+## Technologies Used
 
-- **Azure OpenAI Service** - Microsoft's managed OpenAI models
-- **Azure.AI.OpenAI NuGet Package** - Official .NET SDK for Azure OpenAI
+- **Azure AI Foundry** - Azure AI Foundry deployed models using Endpoint and Key Authentication
+- **Azure AI SDK** - Azure AI SDK for .Net
+- **Azure Open AI Chat Completion** - Azure Open AI Chat completion using Azure AI Foundry deployed model
+- **.NET 8** - Console application with modern C# features
 
 ## Project Structure
 
 ```
-src/
-└── AIChat.CLI/
-    ├── Program.cs              # Main console app
-    ├── Client/
-    │   └── AzureOpenAIClient.cs # Simple AI client wrapper
-    ├── appSettings.json        # Configuration
-    └── AIChat.CLI.csproj      # Project file
+src/AIChat.CLI/
+├── Program.cs                  # Main console app with configuration
+├── Client/
+│   └── AzureOpenAIClient.cs   # AI client with validation
+├── appSettings.json           # Default configuration
+├── appSettings.local.json     # Local overrides (gitignored)
+└── AIChat.CLI.csproj         # Project dependencies
 ```
 
-## Notes
+## Sample Usage
 
-This is intentionally kept simple to serve as a learning example. It's not production-ready solution.
+```
+====================================
+AI Chat CLI Powered by Azure Open AI
+====================================
+Type your message and press Enter to chat. Type 'exit' to quit.
 
-For beginners who want to understand Azure OpenAI integration without getting lost in complex architecture.
+Hi Friend, how can I help you?
+> What is async/await in C#?
+Async/await in C# allows you to write asynchronous code that appears synchronous...
+
+> exit
+Press any key to exit...
+```
